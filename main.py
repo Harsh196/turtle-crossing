@@ -22,9 +22,9 @@ while game_is_on:
         if car.distance(player) < 20:
             game_is_on = False
             scoreboard.final_score()
-    if player.ycor() >= 280:
+    if player.player_is_at_finish_line():
         scoreboard.calculate_score()
         car_manager.increase_speed()
-        player.goto(0, -280)
+        player.reset_position()
 
 screen.exitonclick()
